@@ -1,7 +1,7 @@
 require "shellwords"
 require "open3"
 
-module Sidekiq
+module ActiveJob
   module Ffmpeg
     module Encoder
       class Base

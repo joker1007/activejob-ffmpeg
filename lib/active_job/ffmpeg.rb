@@ -1,8 +1,6 @@
-require "sidekiq/ffmpeg/version"
+require "active_job/ffmpeg/version"
 
-require "sidekiq"
-
-module Sidekiq
+module ActiveJob
   module Ffmpeg
 
     autoload :BaseJob, "#{File.dirname(__FILE__)}/ffmpeg/base_job"

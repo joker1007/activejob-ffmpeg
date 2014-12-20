@@ -1,15 +1,15 @@
-# Sidekiq::Ffmpeg
-[![Gem Version](https://badge.fury.io/rb/sidekiq-ffmpeg.svg)](http://badge.fury.io/rb/sidekiq-ffmpeg)
-[![Build Status](https://travis-ci.org/joker1007/sidekiq-ffmpeg.svg?branch=master)](https://travis-ci.org/joker1007/sidekiq-ffmpeg)
-[![Coverage Status](https://coveralls.io/repos/joker1007/sidekiq-ffmpeg/badge.png)](https://coveralls.io/r/joker1007/sidekiq-ffmpeg)
+# ActiveJob::Ffmpeg
+[![Gem Version](https://badge.fury.io/rb/activejob-ffmpeg.svg)](http://badge.fury.io/rb/activejob-ffmpeg)
+[![Build Status](https://travis-ci.org/joker1007/activejob-ffmpeg.svg?branch=master)](https://travis-ci.org/joker1007/activejob-ffmpeg)
+[![Coverage Status](https://coveralls.io/repos/joker1007/activejob-ffmpeg/badge.png)](https://coveralls.io/r/joker1007/activejob-ffmpeg)
 
-Sidekiq job definition for ffmpeg.
+ActiveJob job definition for ffmpeg.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'sidekiq-ffmpeg', github: "joker1007/sidekiq-ffmpeg"
+    gem 'activejob-ffmpeg', github: "joker1007/activejob-ffmpeg"
 
 And then execute:
 
@@ -18,8 +18,7 @@ And then execute:
 ## Usage
 
 ```ruby
-class EncodeJob < Sidekiq::Ffmpeg::BaseJob
-
+class EncodeJob < ActiveJob::Ffmpeg::BaseJob
   def on_progress(progress, extra_data = {})
     p progress
   end
@@ -29,7 +28,7 @@ class EncodeJob < Sidekiq::Ffmpeg::BaseJob
   end
 end
 
-EncodeJob.perform_async(input_filename, output_filename, extra_data, :mp4)
+EncodeJob.perform_later(input_filename, output_filename, extra_data, :mp4)
 ```
 
 Implemented Encoder class is following:
@@ -39,7 +38,7 @@ Implemented Encoder class is following:
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/sidekiq-ffmpeg/fork )
+1. Fork it ( https://github.com/[my-github-username]/activejob-ffmpeg/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

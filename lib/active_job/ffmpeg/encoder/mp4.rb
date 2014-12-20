@@ -1,4 +1,4 @@
-module Sidekiq
+module ActiveJob
   module Ffmpeg
     module Encoder
       class MP4 < Base
