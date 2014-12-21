@@ -17,13 +17,13 @@ describe ActiveJob::Ffmpeg do
         end
 
         it "on_progress receive call" do
-          expect(encoder.on_progress).to receive(:call).with(an_instance_of(Float)).at_least(5).and_call_original
+          expect(encoder.on_progress).to receive(:call).with(an_instance_of(Float)).at_least(4).and_call_original
           encoder.do_encode("#{sample_dir}/sample.mp4", "#{sample_dir}/output.mp4")
         end
 
         describe "shellescape" do
           it "on_progress receive call" do
-            expect(encoder.on_progress).to receive(:call).with(an_instance_of(Float)).at_least(5).and_call_original
+            expect(encoder.on_progress).to receive(:call).with(an_instance_of(Float)).at_least(4).and_call_original
             encoder.do_encode("#{sample_dir}/hoge's title.mp4", "#{sample_dir}/output.mp4")
           end
         end
@@ -66,7 +66,7 @@ describe ActiveJob::Ffmpeg do
         end
 
         it "on_progress receive call" do
-          expect(encoder.on_progress).to receive(:call).with(an_instance_of(Float)).at_least(5)
+          expect(encoder.on_progress).to receive(:call).with(an_instance_of(Float)).at_least(4)
           encoder.do_encode("#{sample_dir}/sample.mp4", "#{sample_dir}/output.webm")
         end
       end
@@ -109,7 +109,7 @@ describe ActiveJob::Ffmpeg::BaseJob do
     it "should receive on_progress" do
       input_filename = "#{sample_dir}/sample.mp4"
       output_filename = "#{sample_dir}/output.mp4"
-      expect_any_instance_of(ProgressJob).to receive(:on_progress).with(an_instance_of(Float), {}).at_least(5)
+      expect_any_instance_of(ProgressJob).to receive(:on_progress).with(an_instance_of(Float), {}).at_least(4)
       ProgressJob.perform_later(input_filename, output_filename)
     end
   end
