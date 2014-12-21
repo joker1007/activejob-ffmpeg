@@ -5,7 +5,7 @@ before_install:
   - ci/install_ffmpeg
   - export PATH=`pwd`/ffmpeg:$PATH
 rvm:
-  - 2.1.1
+  - 2.1
 notifications:
   email:
     on_success: change
