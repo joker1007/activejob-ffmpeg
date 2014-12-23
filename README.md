@@ -6,6 +6,9 @@
 ActiveJob job definition for ffmpeg.
 
 ## Installation
+gem install:
+
+    $ gem install activejob-ffmpeg
 
 Add this line to your application's Gemfile:
 
